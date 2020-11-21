@@ -1,5 +1,5 @@
-; input EXC = adress of string : EDX = nbr of char to print : EBX = file discriptor
+; RDI = file descriptor | RSI = offset string | RDX = nbr de caracter
 write:
-    mov eax, 4
-    int 80h
+    mov rax, 1
+    syscall
     ret

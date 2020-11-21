@@ -1,4 +1,5 @@
-; input : EBX, return value
+; input : RDI, return value
 exit:
-    mov eax, 1
-    int 80h
+    mov rdx, rdi
+    mov rax, 60
+    syscall

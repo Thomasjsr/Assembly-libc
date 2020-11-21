@@ -1,19 +1,19 @@
-; input : ESI
-; output : EAX
+; input : rdi
+; output : rax
 strlen:
     push rcx
-    push rsi
-    xor ecx, ecx
+    push rdi
+    xor rcx, rcx
 
     .loop:
-        cmp byte [esi], 0
+        cmp byte [rdi], 0
         je .done
-        inc esi
-        inc ecx
+        inc rdi
+        inc rcx
         jmp .loop
     
     .done:
-        mov eax, ecx
-        pop rsi
+        mov rax, rcx
+        pop rdi
         pop rcx
         ret

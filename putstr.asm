@@ -1,17 +1,18 @@
-%include "strlen.asm"
+;%include "strlen.asm"
 %include "write.asm"
-; input ESI
+
+; input RDI
 putstr:
     push rdx
     push rax
     push rcx
     push rbx
 
+    mov rsi, rdi
     call strlen ; output : EAX = lenght of string
 
-    mov edx, eax
-    mov ecx, esi
-    mov ebx, 1 ; file discriptor
+    mov rdx, rax    
+    mov rdi, 1 ; file discriptor
 
     call write
 
